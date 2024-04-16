@@ -1,10 +1,15 @@
 from rest_framework import serializers
-from .models import Course, Instructor
+from django.core.exceptions import ValidationError
+from django.contrib.auth import authenticate 
+
+from edtraaApp.models import Course, Instructor
 
 class InstructorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Instructor
         fields = ['id', 'name', 'email'] 
+
+
 class CourseSerializer(serializers.ModelSerializer):
     instructors = InstructorSerializer(many=True)  
 

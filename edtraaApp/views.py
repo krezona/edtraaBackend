@@ -2,10 +2,8 @@ from rest_framework import status
 from rest_framework.views import APIView
 from django.http import JsonResponse
 
-from .models import Course , Instructor
-
-from edtraaApp.CustomModifications.serializers import CourseSerializer, InstructorSerializer
-
+from edtraaApp.models import Course ,Instructor
+from edtraaApp.CustomModifications.serializers import CourseSerializer,InstructorSerializer
 
 # Create your views here.
 
