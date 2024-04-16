@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from django.core.exceptions import ValidationError
-from django.contrib.auth import authenticate 
+
 
 from edtraaApp.models import Course, Instructor
 

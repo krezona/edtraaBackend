@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from django.http import JsonResponse
 
 from edtraaApp.models import Course ,Instructor
-from edtraaApp.CustomModifications.serializers import CourseSerializer,InstructorSerializer
+# from edtraaApp.CustomModifications.serializers import CourseSerializer,InstructorSerializer
 
 # Create your views here.
 
@@ -30,7 +30,7 @@ class CourseView(APIView):
         
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+            return JsonResponse({'message': 'Course uploaded successfully', 'data': serializer.data}, status=status.HTTP_201_CREATED)
         
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -44,7 +44,7 @@ class CourseView(APIView):
         
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data)
+            return JsonResponse({'message': 'Course updated successfully', 'data': serializer.data})
         
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         

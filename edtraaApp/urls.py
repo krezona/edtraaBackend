@@ -1,7 +1,7 @@
 from django.urls import path
 from .views import *
 from .views import CourseView
-from edtraaApp.CustomModifications.serializers import CourseSerializer,InstructorSerializer
+# from edtraaApp.CustomModifications.serializers import CourseSerializer,InstructorSerializer
 
 urlpatterns = [
 
