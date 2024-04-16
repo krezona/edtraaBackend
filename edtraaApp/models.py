@@ -5,6 +5,11 @@ from django.db import models
 class Instructor(models.Model):
     name=models.CharField(max_length=50)
 
+    def __str__(self):
+        return f"{self.name}"
+
+    
+
 
 class Course(models.Model):
 
@@ -19,6 +24,10 @@ class Course(models.Model):
     duration=models.CharField(max_length=50)
     category=models.CharField(max_length=50, choices=categories)
     topics=models.JSONField()
+    is_active=models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.title}: {self.subTitle}"
 
 
 
